@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://ExampleScenes/Chapter_08_Fractals/Exercise_08_04/Exercise_08_04.gd" type="Script" id=1]
+
+[node name="Node2D" type="Node2D"]
+position = Vector2( 64, 54 )
+script = ExtResource( 1 )

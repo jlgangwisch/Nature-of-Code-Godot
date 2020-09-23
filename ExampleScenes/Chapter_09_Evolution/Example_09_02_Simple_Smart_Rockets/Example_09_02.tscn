@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://ExampleScenes/Chapter_09_Evolution/Example_09_03_Smart_Rockets/Population_09_03.gd" type="Script" id=1]
+[ext_resource path="res://ExampleScenes/Chapter_09_Evolution/Example_09_02_Simple_Smart_Rockets/draw_circle.gd" type="Script" id=2]
+
+
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Target" type="Node2D" parent="."]
+position = Vector2( 766.503, 295.571 )
+script = ExtResource( 2 )
+
+[node name="Population_09_02" type="Node" parent="."]
+script = ExtResource( 1 )
