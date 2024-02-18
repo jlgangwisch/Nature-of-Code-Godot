@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://ExampleScenes-Godot3/Chapter_00_Introduction/Ex 1_6 2D Simplex Noise.gd" id="1"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2( 478.2, 309.423 )
+script = ExtResource( 1 )

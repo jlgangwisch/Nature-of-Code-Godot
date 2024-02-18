@@ -1,0 +1,67 @@
+[gd_scene load_steps=3 format=3 uid="uid://be6lleysajw88"]
+
+[ext_resource type="Script" path="res://ExampleScenes-Godot4/Chapter_09_Evolutionary_Computing/B_Exercise_09_02_WeightedSelection_AcceptReject/Exercise_09_02_AcceptReject.gd" id="1_h7m35"]
+
+[sub_resource type="FontFile" id="FontFile_giob1"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/50/0 = Vector2(0, 0)
+cache/0/16/0/kerning_overrides/100/0 = Vector2(0, 0)
+cache/0/50/0/ascent = 0.0
+cache/0/50/0/descent = 0.0
+cache/0/50/0/underline_position = 0.0
+cache/0/50/0/underline_thickness = 0.0
+cache/0/50/0/scale = 1.0
+cache/0/50/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/50/0/kerning_overrides/50/0 = Vector2(0, 0)
+cache/0/50/0/kerning_overrides/100/0 = Vector2(0, 0)
+cache/0/100/0/ascent = 0.0
+cache/0/100/0/descent = 0.0
+cache/0/100/0/underline_position = 0.0
+cache/0/100/0/underline_thickness = 0.0
+cache/0/100/0/scale = 1.0
+cache/0/100/0/kerning_overrides/16/0 = Vector2(0, 0)
+cache/0/100/0/kerning_overrides/50/0 = Vector2(0, 0)
+cache/0/100/0/kerning_overrides/100/0 = Vector2(0, 0)
+
+[node name="Exercise0902" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_h7m35")
+
+[node name="population_label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+autowrap_mode = 2
+
+[node name="best_label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 3
+theme_override_constants/outline_size = 14
+theme_override_fonts/font = SubResource("FontFile_giob1")
+theme_override_font_sizes/font_size = 100
+text = "to be or not to be"
+horizontal_alignment = 1
+vertical_alignment = 1

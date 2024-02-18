@@ -12,7 +12,7 @@ var temp = []
 var playback: AudioStreamPlayback = null # Actual playback stream, assigned in _ready().
 var note_array = [note_a, note_a]
 var buffer_size = 22050*2
-var wav_buffer = PoolVector2Array([])
+var wav_buffer = PackedVector2Array([])
 var framecount = 0
 
 func _fill_buffer(note):
@@ -69,7 +69,7 @@ func fill_buffer_chords():
 
 func add_notes(freq:float):
 	note_array.append(freq)
-	phases.empty()
+	phases.is_empty()
 	#set phases to 0?  Does this matter?
 	for i in note_array:
 		i = 0.0
@@ -83,7 +83,7 @@ func add_notes_buffer(freq:float):
 	#playback.clear_buffer()
 	#note_array.append(freq)
 	note_array[0] = freq
-	phases.empty()
+	phases.is_empty()
 	#set phases to 0?  Does this matter?
 	for i in note_array:
 		i = 0.0
@@ -109,7 +109,7 @@ func _process(_delta):
 	#print(playback.can_push_buffer(1024))
 
 func create_buffer():
-	wav_buffer.empty()
+	wav_buffer.is_empty()
 	wav_buffer.resize(4096)
 	var amp =0.0
 	var amp_inc = 1.0/wav_buffer.size()
@@ -150,7 +150,7 @@ func my_map(input, minInput, maxInput, minOutput, maxOutput):
 	return output
 
 func _draw():
-	var points = PoolVector2Array([])
+	var points = PackedVector2Array([])
 	var amp =0.0
 	for i in 1024:
 		points.append(Vector2(0,0))

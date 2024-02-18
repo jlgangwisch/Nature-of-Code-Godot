@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://ExampleScenes-Godot3/EcoSystem/Ecosystem3/EcoSystem3.gd" id="1"]
+[ext_resource type="Script" path="res://ExampleScenes-Godot3/EcoSystem/Ecosystem3/TestEnvironment.gd" id="2"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Sneks" type="Node2D" parent="."]
+
+[node name="Snek" type="Node2D" parent="Sneks"]
+script = ExtResource( 1 )
+amplitude = 20
+period = 200
+proximity = 10

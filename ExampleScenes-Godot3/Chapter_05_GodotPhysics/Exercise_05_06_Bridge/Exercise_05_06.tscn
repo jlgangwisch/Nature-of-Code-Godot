@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://ExampleScenes-Godot3/Chapter_05_GodotPhysics/Exercise_05_06_Bridge/PinChain_5_6.gd" id="1"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="PinBridge" type="Node2D" parent="."]
+script = ExtResource( 1 )
+softness = 0.0
+bias = 0.2

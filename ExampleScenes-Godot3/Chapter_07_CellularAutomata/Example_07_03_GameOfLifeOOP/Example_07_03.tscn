@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://ExampleScenes-Godot3/Chapter_07_CellularAutomata/Example_07_03_GameOfLifeOOP/Board_07_03.gd" id="1"]
+
+[node name="Node2D" type="Node2D"]
+z_index = 2
+script = ExtResource( 1 )

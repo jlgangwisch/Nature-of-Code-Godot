@@ -1,0 +1,91 @@
+[gd_scene load_steps=5 format=3]
+
+[ext_resource type="PackedScene" path="res://ExampleScenes-Godot3/EcoSystem/1_Simplex_Walker.tscn" id="1"]
+[ext_resource type="PackedScene" path="res://ExampleScenes-Godot3/EcoSystem/2_Attracted_To_Simplex_Walkers.tscn" id="2"]
+[ext_resource type="Script" path="res://ExampleScenes-Godot3/EcoSystem/Chapter2_Creatures.gd" id="3"]
+[ext_resource type="PackedScene" path="res://ExampleScenes-Godot3/EcoSystem/Mouse_Bug.tscn" id="4"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Simplex_Walkers" type="Node2D" parent="."]
+
+[node name="1_Simplex_Walker" parent="Simplex_Walkers" instance=ExtResource( 1 )]
+
+[node name="1_Simplex_Walker2" parent="Simplex_Walkers" instance=ExtResource( 1 )]
+
+[node name="1_Simplex_Walker3" parent="Simplex_Walkers" instance=ExtResource( 1 )]
+
+[node name="1_Simplex_Walker4" parent="Simplex_Walkers" instance=ExtResource( 1 )]
+
+[node name="1_Simplex_Walker5" parent="Simplex_Walkers" instance=ExtResource( 1 )]
+
+[node name="1_Simplex_Walker6" parent="Simplex_Walkers" instance=ExtResource( 1 )]
+
+[node name="1_Simplex_Walker7" parent="Simplex_Walkers" instance=ExtResource( 1 )]
+
+[node name="1_Simplex_Walker8" parent="Simplex_Walkers" instance=ExtResource( 1 )]
+
+[node name="1_Simplex_Walker9" parent="Simplex_Walkers" instance=ExtResource( 1 )]
+
+[node name="1_Simplex_Walker10" parent="Simplex_Walkers" instance=ExtResource( 1 )]
+
+[node name="1_Simplex_Walker11" parent="Simplex_Walkers" instance=ExtResource( 1 )]
+
+[node name="1_Simplex_Walker12" parent="Simplex_Walkers" instance=ExtResource( 1 )]
+
+[node name="1_Simplex_Walker13" parent="Simplex_Walkers" instance=ExtResource( 1 )]
+
+[node name="1_Simplex_Walker14" parent="Simplex_Walkers" instance=ExtResource( 1 )]
+
+[node name="1_Simplex_Walker15" parent="Simplex_Walkers" instance=ExtResource( 1 )]
+
+[node name="1_Simplex_Walker16" parent="Simplex_Walkers" instance=ExtResource( 1 )]
+
+[node name="1_Simplex_Walker17" parent="Simplex_Walkers" instance=ExtResource( 1 )]
+
+[node name="1_Simplex_Walker18" parent="Simplex_Walkers" instance=ExtResource( 1 )]
+
+[node name="Chapter2_Creatures" type="Node2D" parent="."]
+script = ExtResource( 3 )
+
+[node name="Mover" parent="Chapter2_Creatures" instance=ExtResource( 2 )]
+
+[node name="Mover2" parent="Chapter2_Creatures" instance=ExtResource( 2 )]
+
+[node name="Mover3" parent="Chapter2_Creatures" instance=ExtResource( 2 )]
+
+[node name="Mover4" parent="Chapter2_Creatures" instance=ExtResource( 2 )]
+
+[node name="Mover5" parent="Chapter2_Creatures" instance=ExtResource( 2 )]
+
+[node name="Mover6" parent="Chapter2_Creatures" instance=ExtResource( 2 )]
+
+[node name="Mover7" parent="Chapter2_Creatures" instance=ExtResource( 2 )]
+
+[node name="Mover8" parent="Chapter2_Creatures" instance=ExtResource( 2 )]
+
+[node name="Mover9" parent="Chapter2_Creatures" instance=ExtResource( 2 )]
+
+[node name="Mover10" parent="Chapter2_Creatures" instance=ExtResource( 2 )]
+
+[node name="Mover11" parent="Chapter2_Creatures" instance=ExtResource( 2 )]
+
+[node name="Mover12" parent="Chapter2_Creatures" instance=ExtResource( 2 )]
+
+[node name="Mover13" parent="Chapter2_Creatures" instance=ExtResource( 2 )]
+
+[node name="Mover14" parent="Chapter2_Creatures" instance=ExtResource( 2 )]
+
+[node name="Mover15" parent="Chapter2_Creatures" instance=ExtResource( 2 )]
+
+[node name="Mover16" parent="Chapter2_Creatures" instance=ExtResource( 2 )]
+
+[node name="Mover17" parent="Chapter2_Creatures" instance=ExtResource( 2 )]
+
+[node name="Mover18" parent="Chapter2_Creatures" instance=ExtResource( 2 )]
+
+[node name="Mover19" parent="Chapter2_Creatures" instance=ExtResource( 2 )]
+
+[node name="Mover20" parent="Chapter2_Creatures" instance=ExtResource( 2 )]
+
+[node name="Mouse_Bug" parent="." instance=ExtResource( 4 )]

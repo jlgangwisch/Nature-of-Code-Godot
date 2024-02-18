@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://ExampleScenes-Godot3/Chapter_09_Evolution/Example_09_02_Simple_Smart_Rockets/test.gd" id="2"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 2 )

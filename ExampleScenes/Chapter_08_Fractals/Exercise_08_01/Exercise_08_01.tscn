@@ -1,6 +1,0 @@
-[gd_scene load_steps=2 format=2]
-
-[ext_resource path="res://ExampleScenes/Chapter_08_Fractals/Exercise_08_01/Exercise_08_01.gd" type="Script" id=1]
-
-[node name="Node2D" type="Node2D"]
-script = ExtResource( 1 )
