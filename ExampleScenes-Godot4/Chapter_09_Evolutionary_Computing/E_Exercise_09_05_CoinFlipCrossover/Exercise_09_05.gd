@@ -1,7 +1,6 @@
 extends Node
 
-#Pick any of the weighted selection algorithms and adapt the algorithm 
-#to guarantee that two unique parents are picked.
+#rewrite crossover reproduction to be 50% chance from either parent
 
 #implemented in both below by pop_back() from array 
 var population : Array = []
@@ -84,7 +83,7 @@ func select_parents_ranked(_population:Array, _num_of_parents:int)->Array:
 	#print([ranked_mating_pool[0].size(),ranked_mating_pool[1].size(),ranked_mating_pool[2].size()])
 	return parents
 
-func crossover_reproduction(_parentA:exercise_09_05_DNA, _parentB:exercise_09_05_DNA)->exercise_09_05_DNA:
+func reproduction_crossover(_parentA:exercise_09_05_DNA, _parentB:exercise_09_05_DNA)->exercise_09_05_DNA:
 	#crossover
 	var gene_length : int= _parentA.gene_length
 	var midpoint = randi_range(0, gene_length)
@@ -97,7 +96,19 @@ func crossover_reproduction(_parentA:exercise_09_05_DNA, _parentB:exercise_09_05
 	child.update_genes_as_string()
 	return child
 
-
+func reproduction_coinflip(_parentA:exercise_09_05_DNA, _parentB:exercise_09_05_DNA)->exercise_09_05_DNA:
+	var gene_length : int= _parentA.gene_length
+	#var midpoint = randi_range(0, gene_length)
+	var child := exercise_09_05_DNA.new(gene_length)
+	var rn := randi() % 2
+	
+	for i in gene_length:
+		if rn == 0:
+			child.genes[i]=_parentA.genes[i]
+		else:
+			child.genes[i]=_parentB.genes[i]
+	child.update_genes_as_string()
+	return child
 
 
 func calculate_fitness(_target: String, _dna:exercise_09_05_DNA)->void:
@@ -118,9 +129,9 @@ func _process(delta: float) -> void:
 		#var parents : Array = selection(population,2)
 		var parents : Array = select_parents_ranked(population,2)
 		#print(parents)
-		var child : exercise_09_05_DNA = crossover_reproduction(parents[0],parents[1])
-		print(parents[0].genes_as_string,parents[1].genes_as_string)
-		print(child.genes_as_string)
+		var child : exercise_09_05_DNA = reproduction_coinflip(parents[0],parents[1])
+		#print(parents[0].genes_as_string,parents[1].genes_as_string)
+		#print(child.genes_as_string)
 		
 	if run:
 		if population_label:
