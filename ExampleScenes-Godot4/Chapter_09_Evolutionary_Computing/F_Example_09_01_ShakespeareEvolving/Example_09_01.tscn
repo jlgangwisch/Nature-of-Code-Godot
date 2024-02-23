@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgwtbp3auvc5p"]
+
+[ext_resource type="Script" path="res://ExampleScenes-Godot4/Chapter_09_Evolutionary_Computing/F_Example_09_01_ShakespeareEvolving/Example_09_01.gd" id="1_44a6t"]
+
+[node name="Node2D" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_44a6t")
+
+[node name="Best_Phrase" type="Label" parent="."]
+offset_right = 80.0
+offset_bottom = 14.0
+text = "Best Phrase:"
+
+[node name="Phrase" type="Label" parent="Best_Phrase"]
+layout_mode = 0
+offset_top = 25.0
+offset_right = 80.0
+offset_bottom = 39.0
+scale = Vector2(2, 2)
+text = "012345678901234567"
+
+[node name="Stats" type="Label" parent="."]
+offset_top = 200.0
+offset_right = 116.0
+offset_bottom = 265.0
+text = "total generations: 
+average fitness:  
+total population:"
+
+[node name="All_Phrases" type="Label" parent="."]
+offset_left = 850.0
+offset_right = 1148.0
+offset_bottom = 48.0
+text = "012345678901234567"
+
+[node name="All_Fitness" type="Label" parent="."]
+offset_left = 650.0
+offset_right = 948.0
+offset_bottom = 48.0
+text = "0.05"

@@ -1,5 +1,5 @@
 extends Node
-class_name example_09_01_DNA
+class_name example_09_01B_DNA
 
 var gene_length : int
 var genes : PackedInt32Array = [] 
@@ -16,9 +16,9 @@ func _init(_gene_length:int) -> void:
 	#fill gene with data
 	for g in gene_length:
 		var i :int = randi_range(gene_min,gene_max)
-		genes_as_string += String.chr(i)
 		genes.append(i)
-
+	update_genes_as_string()
+	
 func update_genes_as_string()->void:
 
 	genes_as_string = ""

@@ -1,27 +1,22 @@
-[gd_scene load_steps=2 format=3]
+[gd_scene load_steps=2 format=3 uid="uid://btce1k6c7s7so"]
 
-[ext_resource type="Script" path="res://ExampleScenes-Godot3/Chapter_09_Evolution/Exercise_09_06_Shakespeare_evolving/Exercise_09_06.gd" id="1"]
+[ext_resource type="Script" path="res://ExampleScenes-Godot4/Chapter_09_Evolutionary_Computing/G_Exercise_09_06_ShakespeareEvolving/Exercise_09_06.gd" id="1"]
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource( 1 )
+script = ExtResource("1")
 
 [node name="Best_Phrase" type="Label" parent="."]
 offset_right = 80.0
 offset_bottom = 14.0
 text = "Best Phrase:"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Phrase" type="Label" parent="Best_Phrase"]
+layout_mode = 0
 offset_top = 25.0
 offset_right = 80.0
 offset_bottom = 39.0
-scale = Vector2( 2, 2 )
+scale = Vector2(2, 2)
 text = "012345678901234567"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="Stats" type="Label" parent="."]
 offset_top = 200.0
@@ -30,24 +25,15 @@ offset_bottom = 265.0
 text = "total generations: 
 average fitness:  
 total population:"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="All_Phrases" type="Label" parent="."]
 offset_left = 850.0
 offset_right = 1148.0
 offset_bottom = 48.0
 text = "012345678901234567"
-__meta__ = {
-"_edit_use_anchors_": false
-}
 
 [node name="All_Fitness" type="Label" parent="."]
 offset_left = 650.0
 offset_right = 948.0
 offset_bottom = 48.0
 text = "0.05"
-__meta__ = {
-"_edit_use_anchors_": false
-}

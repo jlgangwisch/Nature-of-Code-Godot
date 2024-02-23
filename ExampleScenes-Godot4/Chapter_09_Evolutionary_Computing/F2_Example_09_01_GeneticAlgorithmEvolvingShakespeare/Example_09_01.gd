@@ -4,17 +4,20 @@ extends Node
 
 #implemented in both below by pop_back() from array 
 var population : Array = []
-@export var population_size :int = 100
+@export var population_size :int = 150
 @export var population_label : Label
 @export var best_label : Label
+@export var target_string = "to be or not to be"
+@export var best_element : example_09_01_DNA
 #this is used as a button to run the script in the editor
 var run := false
 
 func _ready()->void:
 	randomize()
-	population = create_word_population(population_size, 18)
+	population = create_word_population(population_size, target_string.length())
 	population_label = $population_label
 	best_label = $best_label
+	best_element = population[0]
 
 func create_word_population(_population_size:int, _gene_length:int) -> Array:
 	var dna_array : Array
@@ -27,7 +30,8 @@ func selection(_population:Array, _num_of_parents:int)->Array:
 	var mating_pool :Array= []
 	var parents : Array = []
 	for p in _population:
-		calculate_fitness("to be or not to be", p)
+		calculate_fitness(target_string, p)
+		check_if_best_string(p)
 		var i : int = 100 * p.fitness
 		for m in i:
 			mating_pool.append(p)
@@ -39,14 +43,14 @@ func selection(_population:Array, _num_of_parents:int)->Array:
 func select_parents_ranked(_population:Array, _num_of_parents:int)->Array:
 	var parents : Array = []
 	var mating_pool :Array= []
-	var selector : String = "to be or not to be"
+	
 	
 	#if 32 bit, floats won't match
 	var rank_targets: PackedFloat64Array = []
 	
 	# calculate fitnesses and ranks
 	for p in _population:
-		calculate_fitness(selector, p)
+		calculate_fitness(target_string, p)
 		if rank_targets.has(p.fitness):
 			pass
 		else: 
@@ -61,7 +65,7 @@ func select_parents_ranked(_population:Array, _num_of_parents:int)->Array:
 		if p.fitness == rank_targets[0]:
 			ranked_mating_pool[0].append(p)
 			best_label.text = p.genes_as_string
-			if best_label.text == selector:
+			if best_label.text == target_string:
 				run = false
 		elif p.fitness == rank_targets[1]:
 			ranked_mating_pool[1].append(p)
@@ -139,29 +143,31 @@ func _process(delta: float) -> void:
 		print(run)
 	elif Input.is_action_just_pressed("right_mouse"):
 		#run only once
-		population = create_word_population(population_size, 18)
-		#var parents : Array = selection(population,2)
-		var parents : Array = select_parents_ranked(population,2)
-		#print(parents)
-
-		var child : example_09_01_DNA = reproduction_coinflip(parents[0],parents[1])
-		#print(parents[0].genes_as_string,parents[1].genes_as_string)
-		#print(child.genes_as_string)
+		run_generation()
 		
 	if run:
 
-		var next_gen := []
-		for i in population.size():
-			var parents : Array = select_parents_ranked(population,2)
-			var child : example_09_01_DNA = reproduction_coinflip(parents[0],parents[1])
-			mutate(child, 0.01)
-			next_gen.append(child)
-		population = next_gen
+		run_generation()
+func check_if_best_string(element: example_09_01_DNA)->bool:
+	var is_best:=false
+	if element.fitness >= best_element.fitness:
+		best_element = element
+		best_label.text = element.genes_as_string
+		if best_label.text == target_string:
+			run = false
+	return is_best
+	
+func run_generation()->void:
+	
+	for i in population.size():
+		#var parents : Array = select_parents_ranked(population,2)
+		var parents : Array = selection(population,2)
+		#var child : example_09_01_DNA = reproduction_coinflip(parents[0],parents[1])
+		var child : example_09_01_DNA = reproduction_crossover(parents[0],parents[1])
+		mutate(child, 0.01)
+		population[i]=child
 			
-		if population_label:
-			population_label.text = ""
-			for p in population:
-				population_label.text += p.genes_as_string + " "
-		#var fitnesses : PackedInt32Array
-		#for p in population:
-		
+	if population_label:
+		population_label.text = ""
+		for p in population:
+			population_label.text += p.genes_as_string + " "

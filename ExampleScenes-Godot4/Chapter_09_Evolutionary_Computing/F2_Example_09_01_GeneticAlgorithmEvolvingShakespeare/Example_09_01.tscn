@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bc0cva3kwr6eu"]
 
-[ext_resource type="Script" path="res://ExampleScenes-Godot4/Chapter_09_Evolutionary_Computing/F_Example_09_01_GeneticAlgorithmEvolvingShakespeare/Example_09_01.gd" id="1_xrs5d"]
+[ext_resource type="Script" path="res://ExampleScenes-Godot4/Chapter_09_Evolutionary_Computing/F2_Example_09_01_GeneticAlgorithmEvolvingShakespeare/Example_09_01.gd" id="1_xrs5d"]
 
 [sub_resource type="FontFile" id="FontFile_giob1"]
 cache/0/16/0/ascent = 0.0
@@ -44,6 +44,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+text = "right-click runs once
+left click runs until best word chosen."
 autowrap_mode = 2
 
 [node name="best_label" type="Label" parent="."]

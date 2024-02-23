@@ -18,7 +18,7 @@ func _process(delta):
 
 func initialize_population():
 	for i in range(population_num):
-		var d = DNA_e09_06.new(target)
+		var d = exercise_09_06_DNA.new(target)
 		population.append(d)
 		#print(population[i].fitness)
 		
@@ -41,13 +41,13 @@ func reproduce():
 	#Exercise 09_04
 	var mating_tries = 10000
 	while mating_tries > 0 && parent_a == parent_b:
-		mating_pool.remove(b)
+		mating_pool.pop_at(b)
 		b = int(randf_range(0, mating_pool.size()))
 		parent_b = mating_pool[b]
 		mating_tries -=1
 	#print("partners found!  It took ", 10000 - mating_tries, " attempts!")
 
-	var child = DNA_e09_06.new(parent_a.target_string)
+	var child = exercise_09_06_DNA.new(parent_a.target_string)
 	parent_a.crossover(parent_b, child)
 	child.mutate()
 	child.evaluate_fitness()
