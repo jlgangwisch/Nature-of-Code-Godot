@@ -28,7 +28,7 @@ cache/0/100/0/kerning_overrides/16/0 = Vector2(0, 0)
 cache/0/100/0/kerning_overrides/50/0 = Vector2(0, 0)
 cache/0/100/0/kerning_overrides/100/0 = Vector2(0, 0)
 
-[node name="Exercise0903" type="Control"]
+[node name="Exercise0903" type="Control" node_paths=PackedStringArray("population_label", "best_label")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -36,6 +36,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_kehwh")
+population_label = NodePath("population_label")
+best_label = NodePath("best_label")
 
 [node name="population_label" type="Label" parent="."]
 layout_mode = 1

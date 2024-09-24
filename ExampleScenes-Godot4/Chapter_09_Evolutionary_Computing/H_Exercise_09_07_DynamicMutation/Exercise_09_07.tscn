@@ -1,18 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://bgwtbp3auvc5p"]
+[gd_scene load_steps=2 format=3 uid="uid://b23ffrl7ws6pl"]
 
-[ext_resource type="Script" path="res://ExampleScenes-Godot4/Chapter_09_Evolutionary_Computing/F_Example_09_01_ShakespeareEvolving/Example_09_01.gd" id="1_44a6t"]
+[ext_resource type="Script" path="res://ExampleScenes-Godot4/Chapter_09_Evolutionary_Computing/H_Exercise_09_07_DynamicMutation/Exercise_09_07.gd" id="1_lcgx7"]
 
-[node name="Node2D" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("1_44a6t")
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_lcgx7")
 
 [node name="Best_Phrase" type="Label" parent="."]
-layout_mode = 0
 offset_right = 80.0
 offset_bottom = 14.0
 text = "Best Phrase:"
@@ -26,7 +19,6 @@ scale = Vector2(2, 2)
 text = "012345678901234567"
 
 [node name="Stats" type="Label" parent="."]
-layout_mode = 0
 offset_top = 200.0
 offset_right = 116.0
 offset_bottom = 265.0
@@ -35,14 +27,12 @@ average fitness:
 total population:"
 
 [node name="All_Phrases" type="Label" parent="."]
-layout_mode = 0
 offset_left = 850.0
 offset_right = 1148.0
 offset_bottom = 48.0
 text = "012345678901234567"
 
 [node name="All_Fitness" type="Label" parent="."]
-layout_mode = 0
 offset_left = 650.0
 offset_right = 948.0
 offset_bottom = 48.0

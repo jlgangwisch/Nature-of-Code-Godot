@@ -1,15 +1,13 @@
 extends Node2D
 
-class_name exercise_09_06_DNA
+class_name exercise_09_07_DNA
 
 var genes = []
 
 var fitness = 0.0
 var target_string
-
-
-
-var mutation_rate = 0.01
+var low_mutation_rate = 0.01
+var high_mutation_rate = 0.1
 
 func _init(_target_string):
 	target_string = _target_string
@@ -46,8 +44,12 @@ func crossover(partner, child):
 			child.genes[i] = partner.genes[i]
 	
 
-func mutate()->void:
-	
+func mutate(low: bool)->void:
+	var mutation_rate : float
+	if low:
+		mutation_rate = low_mutation_rate
+	else:
+		mutation_rate = high_mutation_rate
 	for i in genes.size():
 		var og = genes[i]
 		var r1 = randf()
