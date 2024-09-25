@@ -20,6 +20,7 @@ func evaluate_fitness():
 	for i in genes.size():
 		if genes[i].unicode_at(0) == target_string.unicode_at(i):
 			score += 1
+	#exercise 9.8 changes in the selection function
 	fitness = float(score)/target_string.length()
 	#print(genes.size())
 

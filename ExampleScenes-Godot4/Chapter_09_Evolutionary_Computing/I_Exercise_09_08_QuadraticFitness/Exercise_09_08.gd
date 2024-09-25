@@ -12,6 +12,7 @@ var population = []
 var target = "to be or not to be"
 var generation = 0
 var finished = false
+var mating 
 
 func _ready():
 	randomize()
@@ -21,7 +22,7 @@ func _ready():
 	
 func _process(delta):
 	if !finished:
-		var m = selection()
+		var m :Array= selection()
 		for i in population.size():
 			population[i] = reproduce(m)
 		generation += 1
@@ -37,7 +38,7 @@ func initialize_population():
 		population.append(d)
 		#print(population[i].fitness)
 		
-func selection():
+func selection()->Array:
 	var mating_pool = []
 
 	#this was missing from the book.  I found this in the github code.
@@ -49,14 +50,17 @@ func selection():
 	for i in range(population.size()):
 		#This mapping thing was also missing from the textbook
 		var fitness = my_map(population[i].fitness, 0, max_fitness, 0, 1)
+		
 		var n = int(fitness*100)
+		#exercise 9.8:
+		n = pow(n, 2)
 		for j in n:
 			mating_pool.append(population[i])
 	#print(mating_pool.size())
 	return mating_pool
 
 
-func reproduce(mating_pool):
+func reproduce(mating_pool)->exercise_09_08_DNA:
 	var a = int(randf_range(0, mating_pool.size()))
 	var b = int(randf_range(0, mating_pool.size()))
 	
@@ -66,7 +70,7 @@ func reproduce(mating_pool):
 	#print(parent_a, ", ", parent_b)
 	
 	#Exercise 09_04
-	var mating_tries = 10000
+	var mating_tries = 100
 	while mating_tries > 0 && parent_a == parent_b:
 		mating_pool.pop_at(b)
 		b = int(randf_range(0, mating_pool.size()))

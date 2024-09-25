@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=3 uid="uid://ugxq777n2d6i"]
 
-[ext_resource type="Script" path="res://ExampleScenes-Godot4/Chapter_09_Evolutionary_Computing/H_Exercise_09_07_DynamicMutation/Exercise_09_07.gd" id="1_lve57"]
+[ext_resource type="Script" path="res://ExampleScenes-Godot4/Chapter_09_Evolutionary_Computing/I_Exercise_09_08_QuadraticFitness/Exercise_09_08.gd" id="1_oyhjr"]
 
 [node name="Node2D" type="Node2D"]
-script = ExtResource("1_lve57")
+script = ExtResource("1_oyhjr")
 
 [node name="Best_Phrase" type="Label" parent="."]
 offset_right = 80.0
