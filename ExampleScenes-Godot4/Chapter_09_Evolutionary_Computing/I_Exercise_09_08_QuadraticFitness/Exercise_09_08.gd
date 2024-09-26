@@ -53,7 +53,8 @@ func selection()->Array:
 		
 		var n = int(fitness*100)
 		#exercise 9.8:
-		n = pow(n, 2)
+		# made program too slow: n = pow(n, 2)
+		# now in evaluate fitness
 		for j in n:
 			mating_pool.append(population[i])
 	#print(mating_pool.size())

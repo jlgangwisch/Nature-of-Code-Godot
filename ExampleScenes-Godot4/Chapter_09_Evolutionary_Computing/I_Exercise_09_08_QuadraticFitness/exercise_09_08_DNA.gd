@@ -15,13 +15,14 @@ func _init(_target_string):
 
 	evaluate_fitness()
 
-func evaluate_fitness():
+func evaluate_fitness()->void:
 	var score = 0
 	for i in genes.size():
 		if genes[i].unicode_at(0) == target_string.unicode_at(i):
 			score += 1
-	#exercise 9.8 changes in the selection function
-	fitness = float(score)/target_string.length()
+	#exercise 9.8
+	# old fitness = float(score) / target_string.length()
+	fitness = float(pow(score, 2)) / (target_string.length() * target_string.length())
 	#print(genes.size())
 
 func generate_DNA():
