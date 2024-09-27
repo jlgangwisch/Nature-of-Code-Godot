@@ -1,0 +1,41 @@
+[gd_scene load_steps=4 format=3 uid="uid://jl4tvr3ik8cs"]
+
+[ext_resource type="Script" path="res://ExampleScenes-Godot4/Chapter_09_Evolutionary_Computing/J_Example_9_2_Smart_Rockets/Population_Example_09_02.gd" id="1_u3acx"]
+[ext_resource type="Texture2D" uid="uid://dh0m85poq5qwm" path="res://icon.png" id="2_di2r0"]
+
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_puk0k"]
+
+[node name="Example93SmarertRockets" type="Node2D" node_paths=PackedStringArray("target_node", "starting_node", "population", "fitness_label", "generations_label")]
+script = ExtResource("1_u3acx")
+target_node = NodePath("target")
+starting_node = NodePath("Starting_Position")
+population = NodePath("Rockets")
+fitness_label = NodePath("Fitness_Label")
+generations_label = NodePath("Generations_Label")
+
+[node name="target" type="Sprite2D" parent="."]
+position = Vector2(617, 164)
+texture = ExtResource("2_di2r0")
+
+[node name="Generations_Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+
+[node name="Fitness_Label" type="Label" parent="."]
+visible = false
+offset_top = 25.0
+offset_right = 40.0
+offset_bottom = 48.0
+
+[node name="Rockets" type="Node2D" parent="."]
+
+[node name="Starting_Position" type="Node2D" parent="."]
+position = Vector2(627, 542)
+
+[node name="Obstacles" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Obstacles"]
+position = Vector2(272, 279)
+shape = SubResource("ConvexPolygonShape2D_puk0k")
+
+[connection signal="area_entered" from="Obstacles" to="." method="_on_obstacles_area_entered"]

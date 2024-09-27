@@ -1,5 +1,5 @@
 extends Node2D
-class_name Rocket_Example_09_02
+class_name Rocket_Example_09_03
 
 var radius : float = 4
 var color := Color(1.0,1.0,1.0,1.0)
@@ -7,10 +7,10 @@ var color := Color(1.0,1.0,1.0,1.0)
 var velocity : Vector2
 var acceleration : Vector2
 var fitness : float = 0
-var dna : DNA_Example_09_02
+var dna : DNA_Example_09_03
 var gene_counter : int = 0
 
-func _init(_global_position: Vector2, _dna: DNA_Example_09_02)->void:
+func _init(_global_position: Vector2, _dna: DNA_Example_09_03)->void:
 	dna = _dna
 	position = _global_position
 

@@ -1,6 +1,6 @@
 extends Node2D
 
-class_name Population_Example_09_02
+class_name Population_Example_09_03
 
 var mutation_rate : float = 0.01
 @export var population_size : int = 50
@@ -18,7 +18,7 @@ var best_fitness : float
 func _ready() -> void:
 	
 	for r in population_size:
-		var rocket := Rocket_Example_09_02.new(starting_node.position, DNA_Example_09_02.new(frames_alive))
+		var rocket := Rocket_Example_09_03.new(starting_node.position, DNA_Example_09_03.new(frames_alive))
 		population.add_child(rocket)
 	
 func _process(delta: float) -> void:
@@ -40,7 +40,7 @@ func fitness()->void:
 		rocket.calculate_fitness(target_node.global_position)
 		
 #
-#func crossover_midpoint(_a:Rocket_Example_09_02, _b:Rocket_Example_09_02)->Rocket_Example_09_02:
+#func crossover_midpoint(_a:Rocket_Example_09_03, _b:Rocket_Example_09_03)->Rocket_Example_09_03:
 	#var child := create_rocket()
 	#var midpoint = randi_range(0, child.dna.genes.size())
 	#for i in child.dna.genes.size():
@@ -49,7 +49,7 @@ func fitness()->void:
 		#else:
 			#child.dna.genes[i] = _b.dna.genes[i]
 	#return child
-#func crossover_coinflip(_a:Rocket_Example_09_02, _b:Rocket_Example_09_02)->Rocket_Example_09_02:
+#func crossover_coinflip(_a:Rocket_Example_09_03, _b:Rocket_Example_09_03)->Rocket_Example_09_03:
 	#var child := create_rocket()
 	#for i in _a.dna.genes.size():
 		#if randi() % 2  == 0:
@@ -59,7 +59,7 @@ func fitness()->void:
 	##print("crossover child: ", child)
 	#return child
 #
-##func mutate(_rocket: Rocket_Example_09_02, _rate: float)->void:
+##func mutate(_rocket: Rocket_Example_09_03, _rate: float)->void:
 	###print("mutate: ", _rocket.dna.genes)
 	##for i in _rocket.dna.genes.size():
 		##if randf()<_rate:
@@ -69,11 +69,11 @@ func reproduction():
 	var new_population : Array = []
 
 	for r in population_size:
-		var parent_a : DNA_Example_09_02 = weighted_selection()
-		var parent_b : DNA_Example_09_02 = weighted_selection()
-		var child : DNA_Example_09_02= parent_a.crossover(parent_b)
+		var parent_a : DNA_Example_09_03 = weighted_selection()
+		var parent_b : DNA_Example_09_03 = weighted_selection()
+		var child : DNA_Example_09_03= parent_a.crossover(parent_b)
 		child.mutate(mutation_rate)
-		new_population.append(Rocket_Example_09_02.new(starting_node.position, child))
+		new_population.append(Rocket_Example_09_03.new(starting_node.position, child))
 	
 	for r in population.get_children():
 		r.queue_free()
@@ -82,7 +82,7 @@ func reproduction():
 	
 	generations +=1
 		#print("parenta: ", parent_a,"  parent b: ", parent_b)
-		#var child : Rocket_Example_09_02 = crossover_coinflip(parent_a, parent_b)
+		#var child : Rocket_Example_09_03 = crossover_coinflip(parent_a, parent_b)
 		#mutate(child, mutation_rate)
 		#if parent_a.fitness + parent_b.fitness < 0.01:
 			#mutate(child, mutation_rate*10)
@@ -94,7 +94,7 @@ func reproduction():
 	#return new_population
 		
 		
-func weighted_selection()->DNA_Example_09_02:
+func weighted_selection()->DNA_Example_09_03:
 	var idx : int = 0
 	var start : = randf()
 	while start >0.0:
@@ -121,11 +121,3 @@ func selection()->void:
 	
 
 	
-
-
-func _on_obstacles_2_area_entered(area: Area2D) -> void:
-	pass # Replace with function body.
-
-
-func _on_obstacles_area_entered(area: Area2D) -> void:
-	pass # Replace with function body.

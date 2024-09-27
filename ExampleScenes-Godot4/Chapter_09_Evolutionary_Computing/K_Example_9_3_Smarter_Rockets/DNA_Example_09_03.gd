@@ -1,6 +1,6 @@
 extends Node
 
-class_name DNA_Example_09_02
+class_name DNA_Example_09_03
 
 var genes : PackedVector2Array = []
 var max_force : float = 0.1
@@ -12,8 +12,8 @@ func _init(_gene_length: int) -> void:
 		vector *= randf_range(0.0, max_force)
 		genes.append(vector)
 		
-func crossover(partner: DNA_Example_09_02)->DNA_Example_09_02:
-	var child = DNA_Example_09_02.new(genes.size())
+func crossover(partner: DNA_Example_09_03)->DNA_Example_09_03:
+	var child = DNA_Example_09_03.new(genes.size())
 	var midpoint = randi_range(0, genes.size())
 	for i in genes.size():
 		if i< midpoint:
