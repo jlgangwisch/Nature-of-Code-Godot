@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cfsynod3b1hk3"]
+
+[ext_resource type="Script" path="res://ExampleScenes-Godot4/Chapter_10_NeuralNetworks/B_Exercise_10_1_GraphingPercievedLine/exercise_10_1_graphing_perceptotron_line.gd" id="1_fejus"]
+[ext_resource type="Script" path="res://ExampleScenes-Godot4/Chapter_10_NeuralNetworks/B_Exercise_10_1_GraphingPercievedLine/perceptron_exercise_10_1.gd" id="2_6f0v5"]
+
+[node name="Exercise101GraphingPerceptotronLine" type="Node2D"]
+script = ExtResource("1_fejus")
+
+[node name="Perceptron_Exercise_10_1" type="Node" parent="."]
+script = ExtResource("2_6f0v5")

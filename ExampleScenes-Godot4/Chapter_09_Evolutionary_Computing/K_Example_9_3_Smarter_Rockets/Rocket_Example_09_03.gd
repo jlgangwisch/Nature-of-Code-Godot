@@ -1,4 +1,4 @@
-extends Node2D
+extends Area2D
 class_name Rocket_Example_09_03
 
 var radius : float = 4
@@ -9,15 +9,28 @@ var acceleration : Vector2
 var fitness : float = 0
 var dna : DNA_Example_09_03
 var gene_counter : int = 0
+var collided := false
+
+var points: PackedVector2Array = [
+		Vector2(0,-radius),
+		Vector2(-radius/2, radius/2),
+		Vector2(radius/2, radius/2)
+	]
 
 func _init(_global_position: Vector2, _dna: DNA_Example_09_03)->void:
 	dna = _dna
 	position = _global_position
 
+func _ready() -> void:
+	var c := CollisionShape2D.new()
+	c.shape = ConvexPolygonShape2D.new()
+	c.shape.points = points
+	add_child(c)
+
 
 	
 func _process(delta: float) -> void:
-	if gene_counter < dna.genes.size():
+	if gene_counter < dna.genes.size() and not collided:
 		apply_force(dna.genes[gene_counter])
 		gene_counter += 1
 		
@@ -36,13 +49,11 @@ func calculate_fitness(_target: Vector2)->float:
 	# target = get_global_mouse_position()
 	var distance : float = global_position.distance_to(_target)
 	fitness = 1/ (distance*distance)
+	if collided:
+		fitness *= 0.1
 	#print(fitness)
 	return fitness
 	
 func _draw() -> void:
-	var points: PackedVector2Array = [
-		Vector2(0,-radius),
-		Vector2(-radius/2, radius/2),
-		Vector2(radius/2, radius/2)
-	]
+	
 	draw_colored_polygon(points,color)

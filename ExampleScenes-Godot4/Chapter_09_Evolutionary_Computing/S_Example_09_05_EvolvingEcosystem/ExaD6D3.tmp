@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnn44h0psvhon"]
+
+[ext_resource type="Script" path="res://ExampleScenes-Godot4/Chapter_09_Evolutionary_Computing/S_Example_09_05_EvolvingEcosystem/example_09_05_evolving_ecosystem.gd" id="1_ye4bh"]
+
+[node name="Example0905EvolvingEcosystem" type="Node2D"]
+script = ExtResource("1_ye4bh")
+
+[node name="Bloops" type="Node2D" parent="."]

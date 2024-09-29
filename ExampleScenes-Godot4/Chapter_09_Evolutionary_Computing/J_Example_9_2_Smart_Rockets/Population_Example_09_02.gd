@@ -121,11 +121,3 @@ func selection()->void:
 	
 
 	
-
-
-func _on_obstacles_2_area_entered(area: Area2D) -> void:
-	pass # Replace with function body.
-
-
-func _on_obstacles_area_entered(area: Area2D) -> void:
-	pass # Replace with function body.

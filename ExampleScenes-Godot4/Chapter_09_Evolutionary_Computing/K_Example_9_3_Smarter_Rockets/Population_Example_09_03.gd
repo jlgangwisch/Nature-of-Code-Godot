@@ -121,3 +121,8 @@ func selection()->void:
 	
 
 	
+
+
+func _on_obstacles_area_entered(area: Area2D) -> void:
+	area.collided = true
+	print(area.collided)

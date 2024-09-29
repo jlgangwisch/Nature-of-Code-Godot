@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://dypv82owhpueh"]
+
+[ext_resource type="Script" path="res://ExampleScenes-Godot4/Chapter_10_NeuralNetworks/A_Example_10_1_Perceptron/Example_10_1_perceptron.gd" id="1_v3261"]
+
+[node name="Example101Perceptron" type="Node2D"]
+script = ExtResource("1_v3261")
+
+[node name="Camera_flippedY" type="Camera2D" parent="."]
+zoom = Vector2(1, -1)
+
+[node name="x_line" type="Line2D" parent="."]
+points = PackedVector2Array(-1000, 0, 1000, 0)
+width = 2.0
+
+[node name="y_line" type="Line2D" parent="."]
+points = PackedVector2Array(0, -1000, 0, 1000)
+width = 2.0
